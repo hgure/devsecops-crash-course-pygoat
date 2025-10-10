@@ -5,7 +5,7 @@ on: [push]
 jobs:
   sast_scan:
     name: Run Bandit Scan
-    runs-on: alpine-latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
@@ -39,8 +39,6 @@ jobs:
 
    - name: Set up Docker
      uses: docker/setup-docker-action@v4.3.0
-     with:
-      version: '28.5.1'
 
    - name: Build Docker Image
      run: docker build -f Dockerfile -t myapp:latest .
