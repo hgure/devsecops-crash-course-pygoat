@@ -6,10 +6,9 @@ WORKDIR /app
 
 # dependencies for psycopg2
 RUN apt-get update && apt-get install --no-install-recommends -y \
-    dnsutils \
+    build-essential \
     libpq-dev \
-    python3-dev \
- && apt-get clean \
+    dnsutils \
  && rm -rf /var/lib/apt/lists/*
 
 
